@@ -1,0 +1,129 @@
+/* Basic reset for margin, padding, and box-sizing */
+body, ul, li, a {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+/* Main container for content styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #123126, #a0e);
+    padding-left: 220px; /* Adds space at the left to prevent overlap with the fixed nav */
+}
+
+/* Navigation styling */
+nav {
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 0 10px 10px 0;
+    box-shadow: 8px 0 16px rgba(0, 0, 0, 0.2);
+    padding: 30px 10px;
+    position: fixed;
+    height: 100%;
+    width: 200px;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* Menu list styles */
+nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+/* Menu items styling */
+nav ul li {
+    position: relative;
+    width: 100%;
+}
+
+/* Link styling with icon support */
+nav ul li a {
+    color: white;
+    font-size: 18px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+}
+
+/* Active link and hover styling */
+nav ul li a.active, nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: translateX(10px);
+}
+
+/* Dropdown menu styling */
+nav ul li .dropdown {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 5px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    width: 180px;
+    margin-top: -10px; /* Aligns dropdown with parent item */
+}
+
+/* Dropdown items styling */
+nav ul li .dropdown li {
+    width: 100%;
+}
+
+nav ul li .dropdown li a {
+    width: 100%;
+    padding: 10px 15px;
+    color: #333;
+    transition: background-color 0.3s;
+}
+
+/* Show dropdown on hover */
+nav ul li:hover .dropdown {
+    display: block;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    nav {
+        width: 100%;
+        height: auto;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    nav ul {
+        flex-direction: row;
+        justify-content: center;
+    }
+    body {
+        padding-left: 0;
+        padding-top: 60px; /* Adjust padding for top-aligned nav */
+    }
+}
+.content{
+    text-align: center;
+
+}
+.content h1{
+    color: red;
+    border-color: #123126;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
+}
+.content p{
+    color: lightskyblue;
+}
